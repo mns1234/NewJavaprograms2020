@@ -1,4 +1,6 @@
 package com.test;
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
 import org.testng.annotations.Test;
 
@@ -15,10 +17,17 @@ public class HomepageTest extends BaseTest {
 
 	@Test
 	public void testsocialLinks() {
-		
+		assertEquals(hp.getsociallinks(),6);
 	}
 	@Test
 	public void testloginLink() {
-		
+		assertEquals(hp.login(), "http://whiteboxqa.com/");
+	}
+
+	@Test
+	public void testSlider() {
+
+		assertTrue(hp.IsSliderpresent());
+
 	}
 }

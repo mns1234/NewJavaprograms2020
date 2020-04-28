@@ -15,10 +15,10 @@ public class Homepage extends BasePage {
 		super(driver);
 	}
 
-	public void open() {
-		driver.get("http://whiteboxqa.com/");
-		driver.manage().window().maximize();
-	}
+	/*
+	 * public void open() { driver.get("http://whiteboxqa.com/");
+	 * driver.manage().window().maximize(); }
+	 */
 
 	public int getsociallinks() {
 		int count = 0;
@@ -31,7 +31,14 @@ public class Homepage extends BasePage {
 
 	public String login() {
 		driver.findElement(By.id(loginbtn)).click();
-		return driver.getCurrentUrl();
+		String s= driver.getCurrentUrl();
+		return s;
+
+	}
+
+	public boolean IsSliderpresent() {
+		boolean isSliderPresent = driver.findElements(By.xpath("/html//div[@id='promo-slider']")).isEmpty() ? false: true;
+		return isSliderPresent;
 
 	}
 }
